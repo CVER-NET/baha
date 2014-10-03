@@ -14,9 +14,9 @@ public class enemy : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(Vector3.down * Time.deltaTime * 5);
+		transform.Translate(Vector3.down * GameCore.timer * 5);
 
-        Lifetime -= Time.deltaTime;
+		Lifetime -= GameCore.timer;
 
 
 
