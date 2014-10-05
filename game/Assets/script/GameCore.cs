@@ -5,7 +5,7 @@ public class GameCore : MonoBehaviour {
 
     public static bool timerActive = true;
 	public static float timer;
-
+    
 
 	// Use this for initialization
 	void Start () 
@@ -16,6 +16,8 @@ public class GameCore : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
+        
         if (timerActive)
         {
             timer = Time.deltaTime;
@@ -25,7 +27,7 @@ public class GameCore : MonoBehaviour {
         {
             timer = 0;
         }
-
+        //timerActive = true;
 
 	}
 }
