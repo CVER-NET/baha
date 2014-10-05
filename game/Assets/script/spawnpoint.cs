@@ -23,6 +23,7 @@ public class spawnpoint : MonoBehaviour
             timer = Random.RandomRange(1.0f, 2.0f);
         }
         
-        timer -= (float)Time.deltaTime;
+        //timer -= (float)Time.deltaTime;
+        timer -= GameCore.timer;
 	}
 }
