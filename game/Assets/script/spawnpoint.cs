@@ -4,8 +4,8 @@ using System.Collections;
 public class spawnpoint : MonoBehaviour 
 {
 
-    public GameObject[] enemy;
-
+    public enemy[] enemy;
+	public enemy tmpenemy;
     public float timer = 1.0f;
 
 	// Use this for initialization
@@ -19,11 +19,11 @@ public class spawnpoint : MonoBehaviour
     {
         if (timer <=0)
         {
-            Instantiate(enemy[Random.RandomRange(0, 3)], transform.position, Quaternion.identity);
+			tmpenemy = Instantiate(enemy[Random.Range(0, 3)], transform.position, Quaternion.identity) as enemy;
+			GameCore.enemyAry.Add(tmpenemy);
             timer = Random.RandomRange(1.0f, 2.0f);
         }
-        
-        //timer -= (float)Time.deltaTime;
+               
         timer -= GameCore.timer;
 	}
 }

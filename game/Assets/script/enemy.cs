@@ -39,15 +39,13 @@ public class enemy : MonoBehaviour
 
     void Enemydestory()
     {
-        GameCore.timerActive = true;
+		GameCore.enemyAry.Remove(this);
+		GameCore.timerActive = true;
         Object.Destroy(this.gameObject);
+
     }
 
-     public static void EnemyGetAtked(enemy enemy)
-    {
-       
-        enemy.Lifepoint -= 10;
-    }
+    
 
 }
 
