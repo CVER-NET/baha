@@ -7,6 +7,9 @@ public class GameCore : MonoBehaviour {
     public static bool timerActive = true;
 	public static float timer;
 	public static List<enemy> enemyAry = new List<enemy>();
+	public static int atkType = 0; //0 = default ,1 = red , 2 = yellow , 3 = green
+	public static int playerHP = 100;
+
     
 	void Awake()
 	{

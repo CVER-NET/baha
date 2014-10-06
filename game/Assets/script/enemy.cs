@@ -8,6 +8,7 @@ public class enemy : MonoBehaviour
 
     public int Lifepoint = 100;
     public float Lifetime = 1.0f;
+	public int enemtType;
    
 	// Use this for initialization
 	void Start () {
