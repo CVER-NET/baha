@@ -30,13 +30,22 @@ public class KillZone : MonoBehaviour {
 
 	public void atkTargetenemy()
 	{
-		if(targetenemy.enemtType == GameCore.atkType)
+		if(targetenemy)
 		{
-			targetenemy.Lifepoint -= 10;
+
+			if(targetenemy.enemtType == GameCore.atkType)
+			{
+				targetenemy.Lifepoint -= 10;
+			}
+			else
+			{
+				targetenemy.Lifepoint -= 5;
+			}
+
 		}
 		else
 		{
-			targetenemy.Lifepoint -= 5;
+			GameCore.playerHP -=10;
 		}
 
 	}

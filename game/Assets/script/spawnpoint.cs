@@ -21,7 +21,8 @@ public class spawnpoint : MonoBehaviour
         {
 			tmpenemy = Instantiate(enemy[Random.Range(0, 3)], transform.position, Quaternion.identity) as enemy;
 			GameCore.enemyAry.Add(tmpenemy);
-            timer = Random.RandomRange(1.0f, 2.0f);
+            timer = ((int)Random.RandomRange(1.0f, 6.0f))* 0.5f ;
+			Debug.Log(timer);
         }
                
         timer -= GameCore.timer;
