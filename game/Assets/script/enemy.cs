@@ -34,7 +34,13 @@ public class enemy : MonoBehaviour
             Enemydestory();
 
         }
-
+		if(Lifepoint <= 5.0f)
+		{
+			Color tmpcolor;
+			tmpcolor = this.gameObject.GetComponent<SpriteRenderer>().color;
+			tmpcolor.a = 0.5f;
+			this.gameObject.GetComponent<SpriteRenderer>().color = tmpcolor;
+		}
 
 	}
 
@@ -45,6 +51,8 @@ public class enemy : MonoBehaviour
         Object.Destroy(this.gameObject);
 
     }
+
+
 
     
 
