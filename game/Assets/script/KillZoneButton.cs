@@ -41,8 +41,7 @@ public class KillZoneButton : MonoBehaviour {
 
 	void OnClick ()
 	{
-		//KillZone.atkTargetenemy();
-		kz.
+		kz.atkTargetenemy();
 		
 	}
 }

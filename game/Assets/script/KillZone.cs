@@ -3,7 +3,7 @@ using System.Collections;
 
 public class KillZone : MonoBehaviour {
 
-	public static enemy targetenemy;
+	public enemy targetenemy;
 
 
 
@@ -28,7 +28,7 @@ public class KillZone : MonoBehaviour {
 
 	}
 
-	public static void atkTargetenemy()
+	public void atkTargetenemy()
 	{
 		if(targetenemy.enemtType == GameCore.atkType)
 		{
@@ -36,7 +36,7 @@ public class KillZone : MonoBehaviour {
 		}
 		else
 		{
-			GameCore.playerHP -=10;
+			targetenemy.Lifepoint -=10;
 		}
 
 	}
