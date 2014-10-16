@@ -20,7 +20,7 @@ public class UIEnemyHP : MonoBehaviour {
 		lbl.text = "" + attachEnemy.Lifepoint.ToString();
 
 		//lbl.transform.position = camera.WorldToScreenPoint(attachEnemy.transform.position);
-		camera.ViewportToWorldPoint
+		//camera.ViewportToWorldPoint
 
 		if(attachEnemy.Lifepoint <=0)
 		{
