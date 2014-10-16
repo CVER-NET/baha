@@ -12,6 +12,7 @@ public class GameCore : MonoBehaviour {
 	public static int spawnEnemyType;
 	private static float spawnTypeChangeRemain = 0.0f;
 
+
     
 	void Awake()
 	{
