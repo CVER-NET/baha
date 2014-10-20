@@ -18,8 +18,16 @@ public class enemy : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(Vector3.down * GameCore.timer * 5);
-
+        if (transform.position.y >= -1.75f)
+        {
+            transform.Translate(Vector3.down * GameCore.timer * 10);
+            //GameCore.timerActive = true;
+        }
+        else
+        {
+            GameCore.timerActive = false;
+        }
+        
 		Lifetime -= GameCore.timer;
 
 

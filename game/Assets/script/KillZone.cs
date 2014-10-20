@@ -4,7 +4,7 @@ using System.Collections;
 public class KillZone : MonoBehaviour {
 
 	public enemy targetenemy;
-
+    public int atkPoint = 10;
 
 
 	// Use this for initialization

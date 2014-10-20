@@ -22,13 +22,21 @@ public class UIEnemyHP : MonoBehaviour {
 	void Update () 
 	{
 		UILabel lbl = GetComponent<UILabel>();
-		lbl.text = "" + attachEnemy.Lifepoint.ToString();
-
+		//lbl.text = "" + attachEnemy.Lifepoint.ToString();
+        //lbl.text = "" + attachEnemy.Lifepoint / atk;
+        if (attachEnemy.enemtType == GameCore.atkType)
+        {
+            lbl.text = "1";
+        }
+        else if (attachEnemy.enemtType != GameCore.atkType)
+        {
+            lbl.text = "2";
+        }
 		//lbl.transform.position = camera.WorldToScreenPoint(attachEnemy.transform.position);
 		//camera.ViewportToWorldPoint
 		pos = gameCamera.camera.WorldToViewportPoint(attachEnemy.transform.position);
 		transform.position = uiCamera.camera.ViewportToWorldPoint(pos);
-		if(attachEnemy.Lifepoint <=0)
+        if (attachEnemy.Lifepoint <= 0 || attachEnemy.Lifetime <= 0.1f)
 		{
 			Object.Destroy(this.gameObject);
 		}
