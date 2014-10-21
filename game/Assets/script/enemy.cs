@@ -20,7 +20,7 @@ public class enemy : MonoBehaviour
 	void Update () {
         if (transform.position.y >= -1.75f)
         {
-            transform.Translate(Vector3.down * GameCore.timer * 12);
+            transform.Translate(Vector3.down * GameCore.timer * 20);
             //GameCore.timerActive = true;
         }
         else

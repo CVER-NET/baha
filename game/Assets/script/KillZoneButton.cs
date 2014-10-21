@@ -5,6 +5,7 @@ public class KillZoneButton : MonoBehaviour {
 	UIButton Btn;
 	public int buttontype;
 	public KillZone kz;
+	bool isPress;
 
 	// Use this for initialization
 	void Start () 
@@ -39,9 +40,12 @@ public class KillZoneButton : MonoBehaviour {
 	
 	}
 
-	void OnPress()
+	void OnPress(bool isDown)
 	{
-		kz.atkTargetenemy();
-
+		if(isDown)
+		{
+			kz.atkTargetenemy();
+			Debug.Log ("pressdown");
+		}
 	}
 }
