@@ -8,7 +8,7 @@ public class spawnpoint : MonoBehaviour
 	public enemy tmpenemy;
 	public UIEnemyHP eneHP;
 	public UIEnemyHP tmpeneHP;
-    public float timer = 1.0f;
+    public float timer;
 	public int spawnEnemyType;
 
 	// Use this for initialization
@@ -28,10 +28,7 @@ public class spawnpoint : MonoBehaviour
 			tmpeneHP.attachEnemy = tmpenemy;
 			GameCore.enemyAry.Add(tmpenemy);
             timer = ((int)Random.RandomRange(1.0f, 5.0f))* 0.18f ;
-            if (timer % 0.15f != 0) 
-            {
-                Debug.LogError("no 0.18f"); 
-            }
+           
         }
 		     
         timer -= GameCore.timer;
