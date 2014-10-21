@@ -20,7 +20,7 @@ public class enemy : MonoBehaviour
 	void Update () {
         if (transform.position.y >= -1.75f)
         {
-            transform.Translate(Vector3.down * GameCore.timer * 10);
+            transform.Translate(Vector3.down * GameCore.timer * 12);
             //GameCore.timerActive = true;
         }
         else
@@ -55,7 +55,7 @@ public class enemy : MonoBehaviour
     void Enemydestory()
     {
 		GameCore.enemyAry.Remove(this);
-		GameCore.timerActive = true;
+		//GameCore.timerActive = true;//不要用死亡重啟時間
         Object.Destroy(this.gameObject);
 
     }

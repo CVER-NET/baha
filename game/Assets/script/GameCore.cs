@@ -33,8 +33,8 @@ public class GameCore : MonoBehaviour {
         
         if (timerActive)
         {
-            timer = Time.deltaTime;
-
+			timer = Time.deltaTime;
+			//Debug.Log (timer);
         }
         else
         {
@@ -44,8 +44,8 @@ public class GameCore : MonoBehaviour {
 
 		if(spawnTypeChangeRemain <= 0.0f)
 		{
-			spawnEnemyType = Random.RandomRange(0, 3);
-			spawnTypeChangeRemain = Random.RandomRange (3.0f ,5.0f); 
+			spawnEnemyType = Random.Range(0, 3);
+			spawnTypeChangeRemain = Random.Range (3.0f ,5.0f); 
 		}
 
 	}

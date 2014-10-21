@@ -5,7 +5,7 @@ public class UIButtonPress : MonoBehaviour {
 
 	public int locolatkType;
 	
-	void OnClick ()
+	void OnPress ()
     {
 		//GameCore.enemyAry[0].Lifepoint -= 10;
 		GameCore.atkType = locolatkType;

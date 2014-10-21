@@ -9,7 +9,7 @@ public class KillZoneButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		UIButton Btn = GetComponent<UIButton>();
+		//UIButton Btn = GetComponent<UIButton>();
 
 
 	}
@@ -39,9 +39,9 @@ public class KillZoneButton : MonoBehaviour {
 	
 	}
 
-	void OnClick ()
+	void OnPress()
 	{
 		kz.atkTargetenemy();
-		
+
 	}
 }

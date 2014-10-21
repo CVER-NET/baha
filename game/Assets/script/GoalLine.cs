@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GoalLine : MonoBehaviour {
-
+	public GoalLineChild[] GoalLineChildary;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,26 +10,18 @@ public class GoalLine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-       /* if (!Collision.contacts) // 碰撞數量為0
-       {
-           
-            GameCore.timerActive = true;
+		if(GoalLineChildary[0].gotenemy == null && 
+		   GoalLineChildary[1].gotenemy == null &&
+		   GoalLineChildary[2].gotenemy == null
+		  )
+		  	{
+				GameCore.timerActive = true; //重啟時間
+		  	}
 
-       }*/
         
 	}
 
-    void OnTriggerStay2D(Collider2D coll)
-    {
-        if (coll.gameObject.tag == "Enemy")
-        {
-            GameCore.timerActive = false;
-        }
-       // Debug.Log("Onhit");
-    }
-
-   
-
+  
 
    
 }
