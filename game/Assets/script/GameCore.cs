@@ -8,6 +8,7 @@ public class GameCore : MonoBehaviour {
 	public static float timer;
 	public static List<enemy> enemyAry = new List<enemy>();
 	public static int atkType = 0; //0 = default ,1 = red , 2 = yellow , 3 = green
+	public static int playeratkPoint;
 	public static int playerHP = 100;
 	public static int spawnEnemyType;
 	private static float spawnTypeChangeRemain = 0.0f;
@@ -25,16 +26,17 @@ public class GameCore : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{	
-
+		playeratkPoint = 10;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		spawnTypeChangeRemain -= Time.deltaTime;
+
         
         if (timerActive)
         {
+			spawnTypeChangeRemain -= Time.deltaTime;
 			timer = Time.deltaTime;
 			//Debug.Log (timer);
         }

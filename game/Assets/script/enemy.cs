@@ -18,21 +18,18 @@ public class enemy : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.position.y >= -1.5f)
-        {
-            transform.Translate(Vector3.down * GameCore.timer * 20);
-            //GameCore.timerActive = true;
-        }
-		else if(transform.position.y >= -1.75f)
-		{
-			transform.Translate(Vector3.down * GameCore.timer * 12);
-			//GameCore.timerActive = true;
-		}
-		else
+	
+
+		if(this.transform.position.y == -1.75f)
 		{
 			GameCore.timerActive = false;
         }
-        
+
+		if (GameCore.timerActive)
+		{
+			transform.position = Vector3.MoveTowards(transform.position,new Vector3(transform.position.x,-1.75f,transform.position.z), 0.3f);
+		}
+		
 		Lifetime -= GameCore.timer;
 
 

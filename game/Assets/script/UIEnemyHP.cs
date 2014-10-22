@@ -9,6 +9,7 @@ public class UIEnemyHP : MonoBehaviour {
 	public GameObject uiCamera;
 	Vector3 pos;
 
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -26,11 +27,12 @@ public class UIEnemyHP : MonoBehaviour {
         //lbl.text = "" + attachEnemy.Lifepoint / atk;
         if (attachEnemy.enemtType == GameCore.atkType)
         {
-            lbl.text = "1";
+			lbl.text = "" + (Mathf.Ceil ((float)attachEnemy.Lifepoint / (float)GameCore.playeratkPoint)); 
+			//Debug.Log (Mathf.Ceil ((float)attachEnemy.Lifepoint / (float)GameCore.playeratkPoint));
         }
         else if (attachEnemy.enemtType != GameCore.atkType)
         {
-            lbl.text = "2";
+			lbl.text = "" + attachEnemy.Lifepoint / (GameCore.playeratkPoint / 2) ;
         }
 		//lbl.transform.position = camera.WorldToScreenPoint(attachEnemy.transform.position);
 		//camera.ViewportToWorldPoint
