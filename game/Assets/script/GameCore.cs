@@ -14,8 +14,8 @@ public class GameCore : MonoBehaviour {
 	private static float spawnTypeChangeRemain = 0.0f;
 	public static bool specialspawn;
 	public static int playerScore = 0;
-
-
+	public static float remainTime = 20.0f;
+	//enum GameState;
     
 	void Awake()
 	{
@@ -53,5 +53,16 @@ public class GameCore : MonoBehaviour {
 			spawnTypeChangeRemain = Random.Range (3.0f ,5.0f); 
 		}
 
+		if(remainTime >0)
+		{
+			remainTime -= Time.deltaTime;
+		}
+		else
+		{
+			remainTime = 0.0f;
+			//GameState = END;
+		}
+		//remainTime = Mathf.Lerp (20.0f , 0.0f , Time.deltaTime);
+		//remainTime = Mathf.FloorToInt (Time.time);
 	}
 }
