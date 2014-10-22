@@ -5,7 +5,7 @@ public class KillZone : MonoBehaviour {
 
 	public enemy targetenemy;
     public int atkPoint = 10;
-
+	public Camera MainCamera;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,7 @@ public class KillZone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		MainCamera.backgroundColor = Color.Lerp(MainCamera.backgroundColor,Color.black, 0.1f);
 	}
 
 	void OnTriggerStay2D(Collider2D coll)
@@ -46,6 +46,8 @@ public class KillZone : MonoBehaviour {
 		else
 		{
 			GameCore.playerHP -=10;
+			MainCamera.backgroundColor = Color.red;
+
 		}
 
 	}

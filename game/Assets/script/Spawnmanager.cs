@@ -31,7 +31,16 @@ public class Spawnmanager : MonoBehaviour
 
 	void callspawnEnemy()
 	{
-		spawnpatten = Random.Range (1,7);
+		if(GameCore.specialspawn)
+		{
+			spawnpatten = Random.Range(1,4);
+			GameCore.specialspawn = false;
+		}
+		else
+		{
+			spawnpatten = Random.Range (1,7);
+		}
+
 		//Debug.Log (spawnpatten);
 		switch(spawnpatten)
 		{
@@ -40,27 +49,29 @@ public class Spawnmanager : MonoBehaviour
 			break;
 
 			case 2:
-				spawnpointAry[0].SpawnEnemy(GameCore.spawnEnemyType);
 				spawnpointAry[1].SpawnEnemy(GameCore.spawnEnemyType);
 			break;
 
 			case 3:
-				spawnpointAry[0].SpawnEnemy(GameCore.spawnEnemyType);
 				spawnpointAry[2].SpawnEnemy(GameCore.spawnEnemyType);
 			break;
 
 			case 4:
+				spawnpointAry[0].SpawnEnemy(GameCore.spawnEnemyType);
 				spawnpointAry[1].SpawnEnemy(GameCore.spawnEnemyType);
 			break;
 
 			case 5:
+				spawnpointAry[0].SpawnEnemy(GameCore.spawnEnemyType);
+				spawnpointAry[2].SpawnEnemy(GameCore.spawnEnemyType);
+			break;
+
+			case 6:
 				spawnpointAry[1].SpawnEnemy(GameCore.spawnEnemyType);
 				spawnpointAry[2].SpawnEnemy(GameCore.spawnEnemyType);
 			break;
 		
-			case 6:
-				spawnpointAry[2].SpawnEnemy(GameCore.spawnEnemyType);
-			break;
+
 		}
 	}
 

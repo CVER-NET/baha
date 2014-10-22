@@ -45,7 +45,7 @@ public class KillZoneButton : MonoBehaviour {
 		if(isDown)
 		{
 			kz.atkTargetenemy();
-			Debug.Log ("pressdown");
+			//Debug.Log ("pressdown");
 		}
 	}
 }

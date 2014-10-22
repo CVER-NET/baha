@@ -11,6 +11,8 @@ public class GameCore : MonoBehaviour {
 	public static int playerHP = 100;
 	public static int spawnEnemyType;
 	private static float spawnTypeChangeRemain = 0.0f;
+	public static bool specialspawn;
+	public static int playerScore = 0;
 
 
     
@@ -22,8 +24,8 @@ public class GameCore : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () 
-	{
-	
+	{	
+
 	}
 	
 	// Update is called once per frame
@@ -44,6 +46,7 @@ public class GameCore : MonoBehaviour {
 
 		if(spawnTypeChangeRemain <= 0.0f)
 		{
+			specialspawn = true;
 			spawnEnemyType = Random.Range(0, 3);
 			spawnTypeChangeRemain = Random.Range (3.0f ,5.0f); 
 		}

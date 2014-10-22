@@ -18,14 +18,19 @@ public class enemy : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.position.y >= -1.75f)
+        if (transform.position.y >= -1.5f)
         {
             transform.Translate(Vector3.down * GameCore.timer * 20);
             //GameCore.timerActive = true;
         }
-        else
-        {
-            GameCore.timerActive = false;
+		else if(transform.position.y >= -1.75f)
+		{
+			transform.Translate(Vector3.down * GameCore.timer * 12);
+			//GameCore.timerActive = true;
+		}
+		else
+		{
+			GameCore.timerActive = false;
         }
         
 		Lifetime -= GameCore.timer;
@@ -54,6 +59,7 @@ public class enemy : MonoBehaviour
 
     void Enemydestory()
     {
+		GameCore.playerScore += 10;
 		GameCore.enemyAry.Remove(this);
 		//GameCore.timerActive = true;//不要用死亡重啟時間
         Object.Destroy(this.gameObject);
