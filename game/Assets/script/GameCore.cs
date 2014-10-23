@@ -28,6 +28,8 @@ public class GameCore : MonoBehaviour {
 	void Start () 
 	{	
 		playeratkPoint = 10;
+		spawnEnemyType = Random.Range(0, 3);
+		playerScore = 0;
 	}
 	
 	// Update is called once per frame
