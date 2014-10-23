@@ -42,7 +42,7 @@ public class KillZoneButton : MonoBehaviour {
 
 	void OnPress(bool isDown)
 	{
-		if(isDown)
+		if(isDown && GameCore.GameState == "Playing")
 		{
 			kz.atkTargetenemy();
 			//Debug.Log ("pressdown");

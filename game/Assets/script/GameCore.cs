@@ -15,11 +15,12 @@ public class GameCore : MonoBehaviour {
 	public static bool specialspawn;
 	public static int playerScore = 0;
 	public static float remainTime = 20.0f;
-	//enum GameState;
+	public static string GameState;
+	public GameObject EndResult;
     
 	void Awake()
 	{
-
+		GameState = "Playing";
 	}
 
 
@@ -34,7 +35,7 @@ public class GameCore : MonoBehaviour {
 	{
 
         
-        if (timerActive)
+        if (timerActive )
         {
 			spawnTypeChangeRemain -= Time.deltaTime;
 			timer = Time.deltaTime;
@@ -53,14 +54,21 @@ public class GameCore : MonoBehaviour {
 			spawnTypeChangeRemain = Random.Range (3.0f ,5.0f); 
 		}
 
-		if(remainTime >0)
+		if(remainTime >0 )
 		{
 			remainTime -= Time.deltaTime;
 		}
 		else
 		{
 			remainTime = 0.0f;
-			//GameState = END;
+			GameState = "END";
+			EndResult.gameObject.SetActive(true);
+		}
+
+		if(playerHP <=0)
+		{
+			GameState = "END";
+			EndResult.gameObject.SetActive(true);
 		}
 		//remainTime = Mathf.Lerp (20.0f , 0.0f , Time.deltaTime);
 		//remainTime = Mathf.FloorToInt (Time.time);
