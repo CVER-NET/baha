@@ -39,7 +39,7 @@ public class KillZone : MonoBehaviour {
 			}
 			else
 			{
-				targetenemy.Lifepoint -= (GameCore.playeratkPoint /2);
+				targetenemy.Lifepoint -= (GameCore.playeratkPoint);
 			}
 
 		}
